@@ -24,6 +24,4 @@ jobs:
         steps:
             - name: echo string
               run: Write-Output "Windows string"
-            - name: error
-              run: something else
             
