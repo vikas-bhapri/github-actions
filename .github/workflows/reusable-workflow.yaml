@@ -15,3 +15,4 @@ jobs:
             - name: Output date
               id: date-output
               run: echo "date=$(date)" >> $env:GITHUB_OUPTUT
+            - run: echo $(date)
