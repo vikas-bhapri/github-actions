@@ -14,4 +14,4 @@ jobs:
         steps:
             - name: Output date
               id: date-output
-              run: echo "date=$(date)" >> $GITHUB_OUPTUT
+              run: echo "date=$(date)" >> $env:GITHUB_OUPTUT
