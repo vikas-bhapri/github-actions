@@ -1,18 +1,16 @@
-name: Reusable workflow with outputs
+name: Reusable Workflow
 on:
-    workflow_call:
-        outputs:
-            date:
-                description: 'Called date'
-                value: ${{ jobs.output_job.outputs.date }}
+  workflow_call:
+    outputs:
+      date:
+        description: "Date Value"
+        value: ${{ jobs.generate-output.outputs.date }}
 
 jobs:
-    output_job:
-        runs-on: ubuntu-latest
-        outputs:
-            date: ${{ steps.date-output.outputs.date }}
-        steps:
-            - name: Output date
-              id: date-output
-              run: echo "date=$(date)" >> $env:GITHUB_OUPTUT
-            - run: echo $(date)
+  generate-output:
+    runs-on: ubuntu-latest
+    outputs:
+      date: ${{ steps.date-step.outputs.date }}
+    steps:
+      - run: echo "date=$(date)" >> $GITHUB_OUTPUT
+        id: date-step
