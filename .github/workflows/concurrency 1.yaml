@@ -10,6 +10,6 @@ on:
 concurrency: concurrency-1
 jobs:
     sleep_job:
-        runs-on: ubuntu_latest
+        runs-on: ubuntu-latest
         steps:
             - run: sleep 30
