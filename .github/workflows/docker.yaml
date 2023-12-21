@@ -25,12 +25,15 @@ jobs:
           cat /etc/os-release
       - name: Log Env
         run: echo $API_URL
+      - name: Create a file
+        run: echo "abcd" > text.txt
       - name: Container in a Step
         uses: docker://node:18.16-alpine3.17
         with:
           entrypoint: /usr/local/bin/node
           args: -p 2+3
-      - name: Log node version
+      - name: Show file contents
         uses: docker://node:18.16-alpine3.17
         with:
-          args: -v
+          entrypoint: cat
+          args: text.txt
