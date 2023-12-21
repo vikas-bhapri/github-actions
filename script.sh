@@ -1,3 +1,3 @@
-#!bin/sh
+#!/user/bin/bash
 echo "$@"
 node -v
