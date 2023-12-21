@@ -5,7 +5,7 @@ jobs:
     docker-job:
         runs-on: ubuntu-latest
         container:
-            image: node:20.3-alpine-17
+            image: node:21-alpine3.18
             # credentials:
             #     username:
             #     password:
@@ -25,3 +25,12 @@ jobs:
                 cat /etc/os-release
             - name: Log env
               run: echo $API_URL
+            - name: Container in step
+              uses: docker://node:18-alpine3.18
+              with:
+                entrypoint: usr/loca/bin/node
+                args: -p 2+3
+            - name: Container in another step
+              uses: docker://node:18-alpine3.18
+              with:
+                args: -v
