@@ -33,7 +33,7 @@ jobs:
                 name: code-coverage
                 path: code-coverage-report
             - run: ls -a
-            - run: ls- a
+            - run: ls -a
               working-directory: code-coverage-report
             - name: Use axios
               uses: actions/github-script@v6
