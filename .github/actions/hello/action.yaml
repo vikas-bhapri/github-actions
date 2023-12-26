@@ -1,0 +1,20 @@
+name: Hello World
+author: Vikas Bhapri
+description: "Greet someone & record time"
+inputs:
+  who-to-greet:
+    description: "Who to greet?"
+    required: true
+    default: "World!"
+
+ouputs:
+  time:
+    description: Time of greeting
+
+runs: 
+  using: "node16"
+  main: index.js
+  pre:  'setup.js'
+  pre-if: runner.os == 'linux'
+  post: 'cleanup.js'
+  post-if: runner.os == 'linux'
